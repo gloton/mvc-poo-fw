@@ -47,8 +47,8 @@ class Request
             
             $this->_argumentos = $url;
         }       
-        
-        //si no se indica un controlador, este establese el valor de
+//inicio- con esto siempre se van a devolver un controlador, un metodo, y argumentos        
+        //si no se indica un controlador, este establece el valor de
         //DEFAULT_CONTROLLER que se establecio en Config.php
         if(!$this->_controlador){
             $this->_controlador = DEFAULT_CONTROLLER;
@@ -61,8 +61,16 @@ class Request
         if(!isset($this->_argumentos)){
             $this->_argumentos = array();
         }
+//fin- con esto siempre se van a devolver un controlador, un metodo, y argumentos        
     }
     
+/*
+ * inicio 15:40 01-03-2013
+ creamos los metodos para obtener los velores   
+ private $_controlador;
+ private $_metodo;
+ private $_argumentos;
+*/  
     public function getControlador()
     {
         return $this->_controlador;
@@ -77,6 +85,7 @@ class Request
     {
         return $this->_argumentos;
     }
+/*fin 15:40 01-03-2013*/  
 }
 
 ?>
