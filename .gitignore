@@ -1,0 +1,11 @@
+#ingnorar contenido de la carpeta git
+.git/
+#ingnorar contenido de la carpeta settings
+.settings/
+#ingnorar archivo buildpath
+.buildpath
+#ingnorar archivo project
+.project
+#ignorar todos los archivo que comiencen con ~
+~*
+error_log
