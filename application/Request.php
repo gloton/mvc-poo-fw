@@ -44,10 +44,12 @@ class Request
             # al haber un array_shift antes que extrajo el primer elemento
             # ahora array_shift extrae(saca) el siguiente elemento(que paso a ser el 1ro)
             $this->_metodo = strtolower(array_shift($url));
-            
+
+            #$this->_argumentos
+            # queda como un array conteniendo todos los demas elementos que se hayan pasado por la url            
             $this->_argumentos = $url;
         }       
-//inicio- con esto siempre se van a devolver un controlador, un metodo, y argumentos        
+		//inicio- con esto siempre se van a devolver un controlador, un metodo, y argumentos        
         //si no se indica un controlador, este establece el valor de
         //DEFAULT_CONTROLLER que se establecio en Config.php
         if(!$this->_controlador){

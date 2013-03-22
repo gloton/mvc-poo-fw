@@ -6,7 +6,7 @@ abstract class Controller
 		hereden de Controller, implementen el metodo index por obligacion
 		aunque este no tenga codigo.
 		De esta manera, nos aseguramos que siempre haya un metodo index en
-		todos nuestros controladores, que es e metodo que se va a asignar 
+		todos nuestros controladores, que es el metodo que se va a asignar 
 		por defecto en el archivo Request.php 
 		
         if(!$this->_metodo){
