@@ -15,11 +15,19 @@ class Bootstrap
         //jagl deberia contener los argumentos
         $args = $peticion->getArgs();
         
+        # is_readable
+        #Prueba si el archivo tiene permisos de lectura.
+        #Si existe y el legible devuelve true, de lo contrario false
         if(is_readable($rutaControlador)){
         	require_once $rutaControlador;
         	$controller = new $controller;
         	
+        	# is_callable
+        	#comprueba si una funcion es llamable (es en la documentacion).
+        	#En este caso $controller es un objeto, y metodo un string que contienen 
+        	#el nombre de la funcion que esta dentro de ese objeto($controller)
         	//vamos a revisar si el metodo es valido (revisar)
+        	
         	if(is_callable(array($controller, $metodo))){
         		$metodo = $peticion->getMetodo();
         	} else {
@@ -27,9 +35,18 @@ class Bootstrap
         	}
         	
         	if(isset($args)){
+        		# call_user_func_array
+        		#Llama  al metodo $metodo del objeto $controller
+        		#($controller->$metodo) los argumentos contenidos en $args
+        		# $controller
+        		#Es el controlador que fue pasado por la url
+        		#$metodo
+        		#Es el metodo que fue pasado por la url
         		call_user_func_array(array($controller, $metodo), $args);
         	}
         	else{
+        		# call_user_func
+        		# Llama al metodo $metodo del objeto $controller
         		call_user_func(array($controller, $metodo));
         	}        	
         } else {
