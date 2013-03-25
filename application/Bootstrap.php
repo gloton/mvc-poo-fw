@@ -6,7 +6,14 @@ class Bootstrap
     {
     	# $peticion->getControlador();
     	#contiene solo el nombre del controlador
-        $controller = $peticion->getControlador() . 'Controller';
+    	#Ej; mvc-poo-fw/dfsdfdf/uuuu, en este caso su valor es dfsdfdf (toma el primero)
+    	#en caso no pasarle nada , es decir, mvc-poo-fw, toma el valor index (Request.php)   
+    	 	
+    	//concatena el nombre del controlador con Controler
+    	//ejemplo; nombrecontroladorController
+        $controller = $peticion->getControlador() . 'Controller'; 
+        
+        //ruta completa al archivo controlador dentro de la carpeta controllers
         $rutaControlador = ROOT . 'controllers' . DS . $controller . '.php';
         
         //jagl deberia contener el metodo
@@ -18,8 +25,12 @@ class Bootstrap
         # is_readable
         #Prueba si el archivo tiene permisos de lectura.
         #Si existe y el legible devuelve true, de lo contrario false
-        if(is_readable($rutaControlador)){
+        if(is_readable($rutaControlador)) {
+        	
+        	//si no se le pasa ningun controlador se pasa por defecto el controlador index es decir 
+        	//incluira el archivo controllers/indexController.php
         	require_once $rutaControlador;
+
         	$controller = new $controller;
         	
         	# is_callable
@@ -27,7 +38,6 @@ class Bootstrap
         	#En este caso $controller es un objeto, y metodo un string que contienen 
         	#el nombre de la funcion que esta dentro de ese objeto($controller)
         	//vamos a revisar si el metodo es valido (revisar)
-        	
         	if(is_callable(array($controller, $metodo))){
         		$metodo = $peticion->getMetodo();
         	} else {

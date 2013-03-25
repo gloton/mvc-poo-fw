@@ -7,10 +7,10 @@ class View
 		$this->_controlador = $peticion->getControlador();
 	}
 	
-	#$vista
+	# $vista
 	#Es el nombre de la vista
 	//este metodo es quien nos va a hacer las llamadas a las vistas
-	public function renderizar($vista, $item = false) {
+	public function renderizar ($vista, $item = false) {
 		$rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
 		if(is_readable($rutaView)){
 			include_once $rutaView;
