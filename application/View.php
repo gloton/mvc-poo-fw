@@ -17,10 +17,36 @@ class View
 	#Es el nombre de la vista
 	//este metodo es quien nos va a hacer las llamadas a las vistas
 	public function renderizar ($vista, $item = false) {
+
+		$menu = array(
+				array(
+						'id' => 'inicio',
+						'titulo' => 'Inicio',
+						'enlace' => BASE_URL
+				),
+		
+				array(
+						'id' => 'hola',
+						'titulo' => 'Hola',
+						'enlace' => BASE_URL . 'hola'
+				)
+		);
+				
+		# $_layoutParams
+		#con este array se le enviaran la informacion sobre las rutas 
+		#para agregar las rutas absolutas a las carpetas; css, img y js
+		$_layoutParams = array(
+				'ruta_css' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/css/',
+				'ruta_img' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/img/',
+				'ruta_js' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/js/',
+				'menu' => $menu
+		);		
 		$rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
 		if(is_readable($rutaView)){
+			//para incluir el header
 			include_once ROOT . 'views'. DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
 			include_once $rutaView;
+			//para incluir el footer
 			include_once ROOT . 'views'. DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
 		} else {
             throw new Exception('Error de vista');

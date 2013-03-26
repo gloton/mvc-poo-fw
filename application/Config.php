@@ -8,7 +8,12 @@
 define('BASE_URL', 'http://localhost/mvc-poo-fw/');
 
 define('DEFAULT_CONTROLLER', 'index');
-define('DEFAULT_LAYOUT', 'default');
+
+# layout1
+#es uno de los layout dentro de la carpeta views/layout
+# es decir, esta carpeta es la views/layout/layout1
+//aca define el layout a utilizar
+define('DEFAULT_LAYOUT', 'layout1');
 
 
 /*inicio parametros comunes para todas las vistas*/
