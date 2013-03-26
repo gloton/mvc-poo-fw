@@ -6,6 +6,7 @@
 
 //esta constaante la vamos a utilizar para incluir archivos del lado de las vistas o del lado del usuario
 define('BASE_URL', 'http://localhost/mvc-poo-fw/');
+
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 

@@ -19,7 +19,9 @@ class View
 	public function renderizar ($vista, $item = false) {
 		$rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
 		if(is_readable($rutaView)){
+			include_once ROOT . 'views'. DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
 			include_once $rutaView;
+			include_once ROOT . 'views'. DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
 		} else {
             throw new Exception('Error de vista');
         }
