@@ -43,7 +43,8 @@ class Bootstrap
         	} else {
         		$metodo = 'index';
         	}
-        	
+
+        	//jagl isset($args) creo que siempre deberia dar verdadero
         	if(isset($args)){
         		# call_user_func_array
         		#Llama  al metodo $metodo del objeto $controller
@@ -52,6 +53,8 @@ class Bootstrap
         		#Es el controlador que fue pasado por la url
         		#$metodo
         		#Es el metodo que fue pasado por la url
+        		
+        		//esta es la que llama a la vista
         		call_user_func_array(array($controller, $metodo), $args);
         	}
         	else{
