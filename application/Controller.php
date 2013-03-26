@@ -1,4 +1,5 @@
 <?php
+
 //tiene que ser una clase abstracta para que no pueda ser instanciada
 abstract class Controller
 {
@@ -6,7 +7,7 @@ abstract class Controller
 	
 	public function __construct() {
 		//de esta forma tenemos disponible el objeto View en el controlador ppal
-		$this->_view = new View(new Request);
+		$this->_view = new View (new Request);
 	}	
 	/*	este medodo es abstracto que obliga a que todas las clases que 
 		hereden de Controller, implementen el metodo index por obligacion
@@ -21,7 +22,7 @@ abstract class Controller
         cuando no se envie un metodo al controlador, o se envie un metodo
         por error, ya eso lo va a corregir el bootstrap
     */ 
-    abstract public function index();
+    abstract public function index ();
 }
 
 ?>

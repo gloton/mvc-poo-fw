@@ -11,6 +11,8 @@ class indexController extends Controller
 	}
 	public function index()
 	{
+		//jagl agregaremos este atributo(es opcional)
+		$this->_view->titulo = 'Portada';
 		//para llamar a la vista
         $this->_view->renderizar('index');
 	}
