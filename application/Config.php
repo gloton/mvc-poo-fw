@@ -12,7 +12,7 @@ define('DEFAULT_CONTROLLER', 'index');
 # layout1
 #es uno de los layout dentro de la carpeta views/layout
 # es decir, esta carpeta es la views/layout/layout1
-//aca define el layout a utilizar
+//aca define el layout a utilizar: layout hasta ahora; layout1, default
 define('DEFAULT_LAYOUT', 'layout1');
 
 
