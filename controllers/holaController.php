@@ -42,7 +42,10 @@ class holaController extends Controller
 	#    );    
     public function index()
     {
+    	//agrega una propiedad a la vista
         $this->_view->titulo = 'Hola';
+        
+        //saca a pantalla(muestra) la vista
         $this->_view->renderizar('index', 'hola');
     }
 }

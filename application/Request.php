@@ -21,8 +21,8 @@ class Request
 			#Osea no elimina $ ni el punto, si elimina los espacios.
 			#Listado de filtros
 			#http://es2.php.net/manual/es/function.filter-input.php
+
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
-            
             #explode
             # dividira el parametro $url, cada vez que encuentre un /
             # y lo devolvera en forma de array 

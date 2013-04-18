@@ -28,7 +28,9 @@ class Bootstrap
         if(is_readable($rutaControlador)) {
         	
         	//si no se le pasa ningun controlador se pasa por defecto el controlador index es decir 
-        	//incluira el archivo controllers/indexController.php
+        	//incluira el archivo($rutaControlador) C:\servidor\Apache2\htdocs\mvc-poo-fw\controllers\holaController.php(windows)
+        	//incluira el archivo($rutaControlador) /home/jorgew7/public_html/php/mvc/mvc-poo-fw/controllers/indexController.php(linux)
+
         	require_once $rutaControlador;
 
         	$controller = new $controller;
@@ -54,7 +56,8 @@ class Bootstrap
         		#$metodo
         		#Es el metodo que fue pasado por la url
         		
-        		//esta es la que llama a la vista
+        		//aqui es donde se llama a al metodo de del controlador, en el caso del menu hola
+        		//llama al metodo index del controlador holaController
         		call_user_func_array(array($controller, $metodo), $args);
         	}
         	else{
