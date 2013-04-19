@@ -31,7 +31,13 @@ class View
 						'id' => 'hola',
 						'titulo' => 'Hola',
 						'enlace' => BASE_URL . 'hola'
-				)
+				),
+				array(
+						//este nos va a llavar a un controlador
+						'id' => 'nosotros',
+						'titulo' => 'Nosotros',
+						'enlace' => BASE_URL . 'nosotros'
+				),				
 		);
 		# $_layoutParams
 		#con este array se le enviaran la informacion sobre las rutas 
@@ -44,9 +50,10 @@ class View
 				'ruta_js' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/js/',
 				'menu' => $menu
 		);
+		
 		//crearemos una carpeta por cada controlador ej;	controllers/indexController.php views/index	
 		$rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
-		if(is_readable($rutaView)){
+		if(is_readable($rutaView)) {
 			//para incluir el header
 			include_once ROOT . 'views'. DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
 			//es el contenido de la vista ej;views/index/index.phtml (depende del controlador)
