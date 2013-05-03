@@ -21,4 +21,12 @@ define('APP_NAME', 'Mi Framework');
 define('APP_SLOGAN', 'mi primer framework php y mvc...');
 define('APP_COMPANY', 'www.dlancedu.com');
 /*fin parametros comunes para todas las vistas*/
+
+
+//datos para trabajar con la base de datos
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'mvc');
+define('DB_CHAR', 'utf8');
 ?>

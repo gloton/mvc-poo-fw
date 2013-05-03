@@ -11,6 +11,10 @@ class indexController extends Controller
 	}
 	public function index()
 	{
+		$post = $this->loadModel('post');
+		
+		$this->_view->posts = $post->getPosts();
+		
 		//jagl agregaremos este atributo(es opcional)
 		$this->_view->titulo = 'Portada';
 

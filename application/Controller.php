@@ -23,6 +23,34 @@ abstract class Controller
         por error, ya eso lo va a corregir el bootstrap
     */ 
     abstract public function index ();
+    
+    //crearemos un metodo que nos importe los modelos
+    protected function loadModel($modelo)
+    {
+    	$modelo = $modelo . 'Model';
+    	$rutaModelo = ROOT . 'models' . DS . $modelo . '.php';
+    
+    	if(is_readable($rutaModelo)){
+    		require_once $rutaModelo;
+    		$modelo = new $modelo;
+    		return $modelo;
+    	}
+    	else {
+    		throw new Exception('Error de modelo');
+    	}
+    }
+    
+    protected function getLibrary($libreria)
+    {
+    	$rutaLibreria = ROOT . 'libs' . DS . $libreria . '.php';
+    
+    	if(is_readable($rutaLibreria)){
+    		require_once $rutaLibreria;
+    	}
+    	else{
+    		throw new Exception('Error de libreria');
+    	}
+    }    
 }
 
 ?>
