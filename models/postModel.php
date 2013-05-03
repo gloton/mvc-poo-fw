@@ -11,7 +11,7 @@ class postModel extends Model
         $post = array(
         		'id' => 1,
         		'titulo' => 'Titulo Post',
-        		'id' => 'Cuerpo Post...'
+        		'cuerpo' => 'Cuerpo Post...'
         );
         
         return $post;
