@@ -5,7 +5,8 @@ class Model
 	protected $_db;
 
 	public function __construct() {
-		//$this->_db = new Database();
+		$this->_db = new Database();
+		//echo "Ejecutandose desde la clase Model";
 	}
 }
 ?>

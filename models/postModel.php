@@ -8,14 +8,11 @@ class postModel extends Model
     
     public function getPosts()
     {
-        $post = array(
-        		'id' => 1,
-        		'titulo' => 'Titulo Post',
-        		'cuerpo' => 'Cuerpo Post...'
-        );
+        $post = $this->_db->query("select * from posts");
         
-        return $post;
+        return $post->fetchAll();
     }
 }
 
 ?>
+ 
