@@ -13,11 +13,13 @@ class pdfController extends Controller
     
     public function index(){}
     
-    public function pdf1()
+    //si le agrego parametros tengo que pasarle esos parametros por la url
+    //EJEMPLO:http://localhost/mvc-poo-fw/pdf/pdf1/jorge/gatica
+    public function pdf1($nombre, $apellido)
     {
         $this->_pdf->AddPage();
         $this->_pdf->SetFont('Arial','B',16);
-        $this->_pdf->Cell(40,10, 'Hola Mundo');
+        $this->_pdf->Cell(40,10,$nombre . ' ' . $apellido);
         $this->_pdf->Output();
     }
 }
