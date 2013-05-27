@@ -22,6 +22,11 @@ class pdfController extends Controller
         $this->_pdf->Cell(40,10,$nombre . ' ' . $apellido);
         $this->_pdf->Output();
     }
+    
+    public function pdf2($nombre, $apellido)
+    {
+    	require_once ROOT . 'public' . DS . 'files' . DS . 'pdf2.php';
+    }    
 }
 
 ?>
