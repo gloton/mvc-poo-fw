@@ -68,7 +68,7 @@ class Request
     
 /*
  * inicio 15:40 01-03-2013
- creamos los metodos para obtener los velores   
+ creamos los metodos para obtener los valores   
  private $_controlador;
  private $_metodo;
  private $_argumentos;

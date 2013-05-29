@@ -7,7 +7,7 @@ class pdfController extends Controller
     public function __construct() {
         parent::__construct();
         //importar libreria
-        $this->getLibrary('fpdf');
+        $this->getLibrary('fpdf/fpdf');
         $this->_pdf = new FPDF;
     }
     

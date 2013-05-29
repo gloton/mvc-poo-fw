@@ -58,6 +58,8 @@ class Bootstrap
         		
         		//aqui es donde se llama a al metodo de del controlador, en el caso del menu hola
         		//llama al metodo index del controlador holaController
+        		//El metodo puede llamarse de otra forma, siempre y cuando exista en el controlador llamado
+        		//lo cual se determina en la linea if(is_callable(array($controller, $metodo))){
         		call_user_func_array(array($controller, $metodo), $args);
         	}
         	else{
@@ -68,35 +70,7 @@ class Bootstrap
         } else {
             throw new Exception('no encontrado');
         }
-        
 
-      
-/*         $metodo = $peticion->getMetodo();
-        $args = $peticion->getArgs();
-        
-        //verificamos si es accesible el archivo
-        if(is_readable($rutaControlador)){
-            require_once $rutaControlador;
-            $controller = new $controller;
-            
-            //vamos a revisar si el metodo es valido (revisar)
-            if(is_callable(array($controller, $metodo))){
-                $metodo = $peticion->getMetodo();
-            }
-            else{
-                $metodo = 'index';
-            }
-            
-            if(isset($args)){
-                call_user_func_array(array($controller, $metodo), $args);
-            }
-            else{
-                call_user_func(array($controller, $metodo));
-            }
-            
-        } else {
-            throw new Exception('no encontrado');
-        } */
     }
 }
 
