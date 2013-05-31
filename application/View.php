@@ -33,6 +33,12 @@ class View
 						'enlace' => BASE_URL . 'hola'
 				),
 				array(
+						//y este otro nos va a llavar a otro controlador
+						'id' => 'post',
+						'titulo' => 'Post',
+						'enlace' => BASE_URL . 'post'
+				),
+				array(
 						//este nos va a llavar a un controlador
 						'id' => 'nosotros',
 						'titulo' => 'Nosotros',
