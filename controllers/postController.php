@@ -18,5 +18,11 @@ class postController extends Controller {
 		//para llamar a la vista
         $this->_view->renderizar('index','post');
 	}
+
+	public function nuevo()
+	{
+		$this->_view->titulo = 'Nuevo Post';
+		$this->_view->renderizar('nuevo','post');
+	}	
 }
 ?>

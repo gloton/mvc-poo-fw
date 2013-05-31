@@ -13,6 +13,16 @@ class postModel extends Model
         //PDOStatement::fetchAll — Devuelve un array que contiene todas las filas del conjunto de resultados 
         return $post->fetchAll();
     }
+
+    public function insertarPost ($titulo, $cuerpo) {
+    	$this->_db->prepare("INSERT INTO posts VALUES (NULL,$titulo,$cuerpo)")
+    			->execute (
+    				array(
+    					'titulo' => $titulo,
+    					'cuerpo' => $cuerpo
+    				));
+    }
+
 }
 
 ?>
