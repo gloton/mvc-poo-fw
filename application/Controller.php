@@ -52,8 +52,12 @@ abstract class Controller
     	}
     }    
 
+    //este metodo va a tomar una variable enviada por el metodo post,
+    //y devolvera este dato filtrado
     protected function getTexto($clave) {
         if (isset($_POST[$clave]) && !empty($_POST[$clave])) {
+        	# ENT_QUOTES
+        	#es para que transforme las comillas simples y dobles
             $_POST[$clave] = htmlspecialchars($_POST[$clave], ENT_QUOTES);
             return $_POST[$clave];
         }

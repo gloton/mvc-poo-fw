@@ -15,11 +15,16 @@ class postModel extends Model
     }
 
     public function insertarPost ($titulo, $cuerpo) {
+    	# prepare
+    	#este metodo ayuda con la seguridad contra inyecciones SQL
+    	#ya que elimina automaticamente las comillas en las consultas,
+    	#pero igual hay que sanitizar los datos para lo cual se crearan otras
+    	#funciones que realicen esta tarea(sanitizar)
     	$this->_db->prepare("INSERT INTO posts VALUES (NULL,$titulo,$cuerpo)")
     			->execute (
     				array(
-    					'titulo' => $titulo,
-    					'cuerpo' => $cuerpo
+    					':titulo' => $titulo,
+    					':cuerpo' => $cuerpo
     				));
     }
 
