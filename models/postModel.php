@@ -19,7 +19,8 @@ class postModel extends Model
     	#este metodo ayuda con la seguridad contra inyecciones SQL
     	#ya que elimina automaticamente las comillas en las consultas,
     	#pero igual hay que sanitizar los datos para lo cual se crearan otras
-    	#funciones que realicen esta tarea(sanitizar)
+    	#funciones que realicen esta tarea(sanitizar).
+        #en este caso crearemos la funcion getTexto($variable) en el controlador principal (Controllers)
     	$this->_db->prepare("INSERT INTO posts VALUES (NULL,$titulo,$cuerpo)")
     			->execute (
     				array(

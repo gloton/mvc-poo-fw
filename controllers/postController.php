@@ -5,11 +5,17 @@ class postController extends Controller {
 	public function __construct() {
 		//de esta forma tenemos disponible el objeto View
 		parent::__construct();
+		# loadModel(metodo) 
+		#esta definido en Controller
+		#y esta funcion es la encargada de de cargar el archivo models/postModel.php
 		$this->_post = $this->loadModel('post');
 	}
 		
 	public function index()
 	{
+		# getPosts()
+		#carga la funcon getPosts() definida en models/postModel.php
+		#y es la encargada de obtener los post de la base de datos
 		$this->_view->posts = $this->_post->getPosts();
 		
 		//jagl agregaremos este atributo(es opcional)

@@ -55,6 +55,14 @@ abstract class Controller
     //este metodo va a tomar una variable enviada por el metodo post,
     //y devolvera este dato filtrado
     protected function getTexto($clave) {
+        #isset()
+        # es verdadero solo cuando la variable tiene un valor, anque sea cero o vacio
+        # y es falsa si es null o no esta definida.
+
+        #empty
+        # Es FALSO cuando:
+        # $variable tiene un valor distinto de 0 o string distinto de vacio.
+        
         if (isset($_POST[$clave]) && !empty($_POST[$clave])) {
         	# ENT_QUOTES
         	#es para que transforme las comillas simples y dobles

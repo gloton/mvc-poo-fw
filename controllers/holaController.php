@@ -6,17 +6,18 @@ class holaController extends Controller
         parent::__construct();
     }
 # Segundo parametro $this->_view->renderizar('index', 'SEGUNDOPARAMETRO');        
-#Esta variable es utilizada para agregar una clase current,
+#Esta variable es utilizada para agregar una clase: current,
 #a la que por css se le agrega estilos para indicar al usuario que item se eligio. 
 #Para llevar a cabo esto hay que compararla con el item de menu cliqueado. 
-#Este menu por ejemplo se encuentra en views/layout/layout1/header.php. 
+#Este menu por ejemplo se encuentra aplicado en views/layout/layout1/header.php. 
 #Esta variable(parametro) $item se utiliza en header de la situiente forma 
     #el sigueinte codigo es del archivo header.php   
 	#        if($item && $_layoutParams['menu'][$i]['id'] == $item ){
 	#        	$_item_style = 'current';
 	#        } else {
 	#        	$_item_style = '';
-	#        }
+	#     
+#sin envargo este es construido en application/View.php 
 #Con esto por ejemplo decimos si existe $item(que es igual al segundo parametro de la funcion renderizar),
 #y ademas este es igual al item de menu elegido $_layoutParams['menu'][$i]['id'], si es asi, 
 #se le asignara la clase current a ese item.           
