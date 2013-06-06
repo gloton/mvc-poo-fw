@@ -73,6 +73,16 @@ abstract class Controller
         return '';
 
     }
+    
+    protected function getInt($clave)
+    {
+    	if(isset($_POST[$clave]) && !empty($_POST[$clave])){
+    		$_POST[$clave] = filter_input(INPUT_POST, $clave, FILTER_VALIDATE_INT);
+    		return $_POST[$clave];
+    	}
+    
+    	return 0;
+    }    
 }
 
 ?>

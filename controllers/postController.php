@@ -28,7 +28,8 @@ class postController extends Controller {
 	public function nuevo()
 	{
 		$this->_view->titulo = 'Nuevo Post';
-		$this->_view->prueba = $this->getTexto('titulo');
+		//$this->_view->prueba = $this->getTexto('titulo');
+		$this->_view->prueba = $this->getInt('Guardar');
 		$this->_view->renderizar('nuevo','post');
 	}	
 }
