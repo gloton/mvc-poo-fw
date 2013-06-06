@@ -28,8 +28,21 @@ class postController extends Controller {
 	public function nuevo()
 	{
 		$this->_view->titulo = 'Nuevo Post';
-		//$this->_view->prueba = $this->getTexto('titulo');
-		$this->_view->prueba = $this->getInt('Guardar');
+		/*
+		 * validar el campo con name titulo
+		 * $this->_view->prueba = $this->getTexto('titulo');
+		 */
+		/*
+		 * validar el campo con name titulo
+		 * $this->_view->prueba = $this->getInt('guardar');
+		 */
+		if($this->getInt('guardar') == 1){
+			if(!$this->getTexto('titulo')){
+				$this->_view->_error = 'Debe introducir el titulo del post';
+				$this->_view->renderizar('nuevo', 'post');
+				exit;
+			}			
+		}
 		$this->_view->renderizar('nuevo','post');
 	}	
 }
