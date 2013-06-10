@@ -82,7 +82,19 @@ abstract class Controller
     	}
     
     	return 0;
-    }    
+    }
+    
+    protected function redireccionar($ruta = false)
+    {
+    	if($ruta){
+    		header('location:' . BASE_URL . $ruta);
+    		exit;
+    	}
+    	else{
+    		header('location:' . BASE_URL);
+    		exit;
+    	}
+    }
 }
 
 ?>

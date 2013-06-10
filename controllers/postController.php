@@ -37,12 +37,27 @@ class postController extends Controller {
 		 * $this->_view->prueba = $this->getInt('guardar');
 		 */
 		if($this->getInt('guardar') == 1){
+			$this->_view->datos = $_POST;
+			//si no se ingreso el titulo
 			if(!$this->getTexto('titulo')){
 				$this->_view->_error = 'Debe introducir el titulo del post';
 				$this->_view->renderizar('nuevo', 'post');
 				exit;
-			}			
+			}
+			//si no ingresa el cuerpo			
+			if(!$this->getTexto('cuerpo')){
+				$this->_view->_error = 'Debe introducir el cuerpo del post';
+				$this->_view->renderizar('nuevo', 'post');
+				exit;
+			}	
+			$this->_post->insertarPost(
+					$this->getTexto('titulo'),
+					$this->getTexto('cuerpo')
+			);
+			
+			$this->redireccionar('post');				
 		}
+		
 		$this->_view->renderizar('nuevo','post');
 	}	
 }

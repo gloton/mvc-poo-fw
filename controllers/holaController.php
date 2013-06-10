@@ -17,7 +17,7 @@ class holaController extends Controller
 	#        } else {
 	#        	$_item_style = '';
 	#     
-#sin envargo este es construido en application/View.php 
+#sin enbargo este es construido en application/View.php 
 #Con esto por ejemplo decimos si existe $item(que es igual al segundo parametro de la funcion renderizar),
 #y ademas este es igual al item de menu elegido $_layoutParams['menu'][$i]['id'], si es asi, 
 #se le asignara la clase current a ese item.           
