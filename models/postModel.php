@@ -2,6 +2,7 @@
 
 class postModel extends Model
 {
+    public $result;
     public function __construct() {
         parent::__construct();
     }
@@ -22,13 +23,25 @@ class postModel extends Model
     	#pero igual hay que sanitizar los datos para lo cual se crearan otras
     	#funciones que realicen esta tarea(sanitizar).
         #en este caso crearemos la funcion getTexto($variable) en el controlador principal (Controllers)
-    	$this->_db->prepare("INSERT INTO posts VALUES (null, :titulo, :cuerpo)")
-    	->execute(
+    	$this->result = $this->_db->prepare("INSERT INTO posts VALUES (null, :titulo, :cuerpo)");
+    	$this->result->execute(
     			array(
     					':titulo' => $titulo,
     					':cuerpo' => $cuerpo
     			));
-    	}
+
+        #otra forma de haber ejecutado correctamente esta consulta es como coloco a continuacion
+        /*
+        $this->_db->prepare("INSERT INTO posts VALUES (NULL,:titulo,:cuerpo)")
+                ->execute (
+                    array(
+                        ':titulo' => $titulo,
+                        ':cuerpo' => $cuerpo
+                    ));        
+        */
+        #pero a mi me causa confucion
+    }
+
     	/* Yo, lo habia escrito asi, pero esta mal (NULL,$titulo,$cuerpo) era (null, :titulo, :cuerpo)")
     	$this->_db->prepare("INSERT INTO posts VALUES (NULL,$titulo,$cuerpo)")
     			->execute (
