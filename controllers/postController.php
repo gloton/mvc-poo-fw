@@ -28,6 +28,8 @@ class postController extends Controller {
 	public function nuevo()
 	{
 		$this->_view->titulo = 'Nuevo Post';
+		$this->_view->setJs(array ('nuevo'));
+		
 		/*
 		 * validar el campo con name titulo
 		 * $this->_view->prueba = $this->getTexto('titulo');

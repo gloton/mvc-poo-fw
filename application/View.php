@@ -8,9 +8,12 @@
 class View
 {
 	private $_controlador;
+	private $_js;
+	
 	
 	public function __construct(Request $peticion) {
 		$this->_controlador = $peticion->getControlador();
+		$this->_js = array();
 	}
 	
 	# $vista
@@ -45,6 +48,12 @@ class View
 						'enlace' => BASE_URL . 'nosotros'
 				),				
 		);
+		
+		$js = array();
+		
+		if(count($this->_js)) {
+			$js = $this->_js;
+		}
 		# $_layoutParams
 		#con este array se le enviaran la informacion sobre las rutas 
 		#para agregar las rutas absolutas a las carpetas; css, img y js
@@ -54,7 +63,8 @@ class View
 				'ruta_css' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/css/',
 				'ruta_img' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/img/',
 				'ruta_js' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/js/',
-				'menu' => $menu
+				'menu' => $menu,
+				'js' => $js
 		);
 		
 		//crearemos una carpeta por cada controlador ej;	controllers/indexController.php views/index	
@@ -69,6 +79,18 @@ class View
 		} else {
             throw new Exception('Error de vista');
         }
+	}
+	
+	//con array $js, vamos a enviar los array que queramos incluir en esa vista
+	public function setJs (array $js)
+	{
+		if (is_array($js)) {
+			for ($i = 0; $i < count($js); $i++) {
+				$this->_js[] = BASE_URL . 'views/' . $this->_controlador . '/js/' . $js[$i].'.js';
+			}
+		} else {
+			throw new Exception('Error de js');
+		}
 	}
 }
 ?>

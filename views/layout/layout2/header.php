@@ -2,14 +2,18 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-        <link href="<?php echo $_layoutParams['ruta_css']; ?>estilos.css" rel="stylesheet" type="text/css" />
-        <script src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script>
+		<head>
+		<title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+		<link href="<?php echo $_layoutParams['ruta_css']; ?>estilos.css" rel="stylesheet" type="text/css" />
+		<script src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script>
+		<?php if (isset($_layoutParams['js']) && count($_layoutParams['js'])) : ?>
+		<?php for ($i = 0; $i < count($_layoutParams['js']); $i++) :?>
+		<script src="<?php echo $_layoutParams['js'][$i]; ?>" type="text/javascript"></script>
+		<?php endfor;?>
+        <?php endif;?>
     </head>
 
-    <body>
         <body>
             <div id="main">
                 <div id="header">
@@ -42,4 +46,4 @@
                 </div>
 				<!-- se mostraran los mensajes de error -->
                 <div id="content">
-                    <div id="error"><?php if(isset($this->_error)) echo $this->_error; ?></div>
+                    <div id="error"><?php if(isset($this->_error)) echo $this->_error; ?></div>         
