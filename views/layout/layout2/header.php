@@ -6,6 +6,7 @@
         <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
         <link href="<?php echo $_layoutParams['ruta_css']; ?>estilos.css" rel="stylesheet" type="text/css" />
+        <script src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script>
     </head>
 
     <body>

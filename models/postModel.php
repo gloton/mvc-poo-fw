@@ -2,7 +2,6 @@
 
 class postModel extends Model
 {
-    public $result;
     public function __construct() {
         parent::__construct();
     }
@@ -23,8 +22,8 @@ class postModel extends Model
     	#pero igual hay que sanitizar los datos para lo cual se crearan otras
     	#funciones que realicen esta tarea(sanitizar).
         #en este caso crearemos la funcion getTexto($variable) en el controlador principal (Controllers)
-    	$this->result = $this->_db->prepare("INSERT INTO posts VALUES (null, :titulo, :cuerpo)");
-    	$this->result->execute(
+    	$result = $this->_db->prepare("INSERT INTO posts VALUES (null, :titulo, :cuerpo)");
+    	$result->execute(
     			array(
     					':titulo' => $titulo,
     					':cuerpo' => $cuerpo
