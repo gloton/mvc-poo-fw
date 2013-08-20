@@ -5,7 +5,7 @@
  * */
 
 //esta constaante la vamos a utilizar para incluir archivos del lado de las vistas o del lado del usuario
-define('BASE_URL', 'http://localhost/mvc-poo-fw/');
+define('BASE_URL', 'http://localhost/mvc-davila/');
 
 define('DEFAULT_CONTROLLER', 'index');
 
@@ -13,7 +13,7 @@ define('DEFAULT_CONTROLLER', 'index');
 #es uno de los layout dentro de la carpeta views/layout
 # es decir, esta carpeta es la views/layout/layout1
 //aca define el layout a utilizar: layout hasta ahora; layout1, default
-define('DEFAULT_LAYOUT', 'layout1');
+define('DEFAULT_LAYOUT', 'layout2');
 
 
 /*inicio parametros comunes para todas las vistas*/
